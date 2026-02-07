@@ -72,19 +72,6 @@ struct LogInView: View {
                     .opacity(formIsValid ? 1.0 : 0.5)
                     .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
                 }
-                
-//                Spacer()
-//                
-//                //sign up button
-//                
-//                NavigationLink {
-//                    SignUpView()
-//                        .navigationBarBackButtonHidden()
-//                } label: {
-//                    Text("Sign Up")
-//                }
-
-            
             }
         }
         .navigationBarBackButtonHidden()

@@ -100,14 +100,6 @@ struct SignUpView: View {
                 .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
             }
             
-//            Spacer()
-//            Button {
-//                dismiss()
-//            } label: {
-//                Text("Already have an account, sign in")
-//            }
-            
-            
         }
         .navigationBarBackButtonHidden()
     }
