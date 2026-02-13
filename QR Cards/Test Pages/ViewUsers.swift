@@ -30,6 +30,20 @@ struct ViewUsers: View {
                 Text("\(child.username): \(child.email)")
             }
             
+            Text("Sets")
+                .padding(.top)
+                .font(.title3)
+            ForEach(dataManager.sets, id: \.id) { set in
+                Text("\(set.name): \(set.adult_id)")
+            }
+            
+            Text("Set Names")
+                .padding(.top)
+                .font(.title3)
+            ForEach(dataManager.setNames, id: \.self) {
+                Text($0)
+            }
+            
         }
         
     }

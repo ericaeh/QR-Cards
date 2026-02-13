@@ -90,6 +90,10 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+//    func createSet(name: String, stat1: String, stat2: String, stat3: String, adult_id: String) {
+//        let set = Set(id: NSUUID().uuidString, name: name, stat1: stat1, stat2: stat2, stat3: stat3, adult_id: adult_id)
+//    }
+    
     func signOut() {
         do {
             try Auth.auth().signOut() // signs out user on backend
@@ -115,7 +119,6 @@ class AuthViewModel: ObservableObject {
     func fetchAdult() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let snapshot = try? await Firestore.firestore().collection("adults").document(uid).getDocument() else { return }
-        self.currentUser = try? snapshot.data(as: User.self)
         
         print("DEBUG: Current user is \(self.currentUser)")
     }
@@ -123,7 +126,6 @@ class AuthViewModel: ObservableObject {
     func fetchChild() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let snapshot = try? await Firestore.firestore().collection("children").document(uid).getDocument() else { return }
-        self.currentUser = try? snapshot.data(as: User.self)
         
         print("DEBUG: Current user is \(self.currentUser)")
     }

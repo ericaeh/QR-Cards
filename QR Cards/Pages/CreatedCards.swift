@@ -9,8 +9,17 @@ import SwiftUI
 
 struct CreatedCards: View {
     var body: some View {
-        Text("Created Cards")
-            .font(.system(size: 60))
+        VStack {
+            Text("Created Cards")
+                .font(.system(size: 60))
+            
+            Spacer()
+            
+            HStack {
+                BackButton()
+                PlaceholderButton()
+            }
+        }
     }
 }
 

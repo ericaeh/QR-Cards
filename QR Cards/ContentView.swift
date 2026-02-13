@@ -20,7 +20,7 @@ struct ContentView: View {
             } else {
                 ChildHomePage()
             }
-        } else {
+        } else if viewModel.userSession == nil {
             
             NavigationStack{
                 VStack {

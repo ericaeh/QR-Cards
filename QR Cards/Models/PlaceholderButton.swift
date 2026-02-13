@@ -12,13 +12,13 @@ struct PlaceholderButton: View {
     
     var body: some View {
         
-        GeometryReader{ geometry in
+        HStack{
             
             Button(){
                 
             } label:{
                 Text(" ")
-                    .frame(maxWidth: geometry.size.width*0.8, maxHeight: geometry.size.width*0.3)
+                    .frame(width: UIScreen.main.bounds.width/2-40, height: 0.4*(UIScreen.main.bounds.width/2-40))
                     .font(.title)
                     .foregroundColor(.white)
             }
@@ -26,7 +26,7 @@ struct PlaceholderButton: View {
             .buttonStyle(PlainButtonStyle())
             .background(RoundedRectangle(cornerRadius: 40).fill(Color(UIColor.systemBackground)))
             
-            .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 10))
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
             
             
             

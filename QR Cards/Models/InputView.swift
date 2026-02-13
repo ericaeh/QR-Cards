@@ -12,20 +12,26 @@ struct InputView: View {
     let title: String
     let placeholder: String
     var isSecureField = false
+    var hasTitle = true
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12){
-            Text(title)
+            if hasTitle {
+                Text(title)
+            }
             if isSecureField {
                 SecureField(placeholder, text: $text)
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))
                     .clipShape(.rect(cornerRadius: 20))
+
+    
             } else {
                 TextField(placeholder, text: $text)
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))
                     .clipShape(.rect(cornerRadius: 20))
+                    .accentColor(.gray)
             }
             
             
